@@ -12,7 +12,7 @@ angular.module('iMovie').service('GridViewConfig', function (GridFilterConfig) {
         {field: 'id', title: 'ID', filterable: false},
         {field: 'bookerId', title: 'BOOKER ID', type: "number"},
         {field: 'movieName', title: 'MOVIE NAME', type: "string"},
-        {field: 'showTime', title: 'SHOW TIME', type: "date"},
+        {field: 'showTime', title: 'SHOW TIME', type: "date",format: "{0:yyyy-MM-dd}"},
         {field: 'seat', title: 'SEAT'}
     ];
 

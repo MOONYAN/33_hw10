@@ -13,11 +13,6 @@ angular.module('iMovie').service('GridFilterConfig', function (){
                 endOperator.trigger("change");
                 e.container.find(".k-dropdown").hide();
             });
-        }else if (e.field === "type" || e.field === "role") {
-            var operator = e.container.find("[data-role=dropdownlist]:eq(0)").data("kendoDropDownList");
-            operator.value("eq");
-            operator.trigger("change");
-            operator.wrapper.hide();
         }
     };
 });
