@@ -10,9 +10,9 @@ angular.module('iMovie').service('GridViewConfig', function (GridFilterConfig) {
 
     self.ticketColumns = [
         {field: 'id', title: 'ID', filterable: false},
-        {field: 'bookerId', title: 'BOOKER ID', type: "number"},
-        {field: 'movieName', title: 'MOVIE NAME', type: "string"},
-        {field: 'showTime', title: 'SHOW TIME', type: "date",format: "{0:yyyy-MM-dd}"},
+        {field: 'bookerId', title: 'BOOKER ID'},
+        {field: 'movieName', title: 'MOVIE NAME'},
+        {field: 'showTime', title: 'SHOW TIME', format: "{0:yyyy-MM-dd}"},
         {field: 'seat', title: 'SEAT'}
     ];
 
