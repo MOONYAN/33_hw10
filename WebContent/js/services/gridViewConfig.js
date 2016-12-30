@@ -12,8 +12,18 @@ angular.module('iMovie').service('GridViewConfig', function (GridFilterConfig) {
         {field: 'id', title: 'ID', filterable: false},
         {field: 'bookerId', title: 'BOOKER ID'},
         {field: 'movieName', title: 'MOVIE NAME'},
-        {field: 'showTime', title: 'SHOW TIME'},
-        {field: 'seat', title: 'SEAT'}
+        {field: 'showTime', title: 'SHOW TIME', format: "{0:yyyy-MM-dd}"},
+        {field: 'seat', title: 'SEAT'},
+        {
+            headerTemplate: "作業",
+            command: {
+                name: "destroy",
+                text: "取消訂票",
+                imageClass: "k-delete",
+                className: "k-grid-delete",
+                iconClass: "k-icon"
+            }
+        }
     ];
 
     self.filterableOption = {
