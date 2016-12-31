@@ -26,6 +26,61 @@ angular.module('iMovie').service('GridViewConfig', function (GridFilterConfig) {
         }
     ];
 
+    self.movieColumns = [
+        {
+            field: 'id',
+            title: 'ID',
+            filterable: false,
+            template: '{{dataItem.id}}'
+        },
+        {
+            field: 'name',
+            title: 'MOVIE NAME',
+            template: '{{dataItem.name}}',
+            editor: function (container) {
+                var input = $('<input class="k-input k-textbox" name="name">');
+                input.appendTo(container);
+            },
+        },
+        {
+            field: 'image',
+            title: 'IMAGE',
+            filterable: false,
+            // template: '{{dataItem.image}}',
+            template: '<img src="{{dataItem.image}}" width="100%"/>',
+            editor: function (container) {
+                var input = $('<input class="k-input k-textbox" name="image">');
+                input.appendTo(container);
+            },
+        },
+        {
+            field: 'video',
+            title: 'VIDEO',
+            filterable: false,
+            template: '{{dataItem.video}}',
+            editor: function (container) {
+                var input = $('<input class="k-input k-textbox" name="video">');
+                input.appendTo(container);
+            },
+        },
+        {
+            field: 'storeId',
+            title: 'STORE ID',
+            filterable: false,
+            template: '{{dataItem.storeId}}',
+        },
+        {
+            headerTemplate: "作業",
+            command: {
+                name: "destroy",
+                text: "刪除電影",
+                imageClass: "k-delete",
+                className: "k-grid-delete",
+                iconClass: "k-icon"
+            }
+        }
+    ];
+
     self.filterableOption = {
         extra: false,
         messages: {
