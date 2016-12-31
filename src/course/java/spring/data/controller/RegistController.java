@@ -14,7 +14,7 @@ import course.java.spring.data.model.UserModel;
 public class RegistController
 {
 	RestTemplate restTemplate = new RestTemplate();
-	String userWSUrl = "http://localhost:8080/33_homework09/ws/users";
+	String userWSUrl = "http://localhost:8080/33_hw10/ws/users";
 
 	/**
 	 * 
