@@ -5,5 +5,5 @@ angular.module('iMovie').config(['$stateProvider', function ($stateProvider) {
             templateUrl: contextPath + '/views/movieList.html',
             controller: 'MovieController',
             controllerAs: 'MovieCtrl'
-        })
+        });
 }]);
