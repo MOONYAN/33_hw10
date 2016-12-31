@@ -14,7 +14,21 @@
 	<script src="${pageContext.request.contextPath}/js/customer.config.js"></script>
 	<script src="${pageContext.request.contextPath}/js/customer.run.js"></script>
 	<script src="${pageContext.request.contextPath}/js/controllers/ticketController.js"></script>
+	<script src="${pageContext.request.contextPath}/js/controllers/bookingController.js"></script>
 	<script src="${pageContext.request.contextPath}/js/services/customerService.js"></script>
+</sec:authorize>
+
+<sec:authorize access="hasAnyRole('staff')">
+	<script src="${pageContext.request.contextPath}/js/staff.config.js"></script>
+	<script src="${pageContext.request.contextPath}/js/staff.run.js"></script>
+    <script src="${pageContext.request.contextPath}/js/controllers/movieController.js"></script>
+</sec:authorize>
+
+<sec:authorize access="hasAnyRole('admin')">
+	<script src="${pageContext.request.contextPath}/js/admin.config.js"></script>
+	<script src="${pageContext.request.contextPath}/js/admin.run.js"></script>
+	<script src="${pageContext.request.contextPath}/js/controllers/movieController.js"></script>
+	<script src="${pageContext.request.contextPath}/js/controllers/manageController.js"></script>
 </sec:authorize>
 
 <sec:authorize access="isAuthenticated()">

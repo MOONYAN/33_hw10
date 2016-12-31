@@ -12,8 +12,124 @@ angular.module('iMovie').service('GridViewConfig', function (GridFilterConfig) {
         {field: 'id', title: 'ID', filterable: false},
         {field: 'bookerId', title: 'BOOKER ID'},
         {field: 'movieName', title: 'MOVIE NAME'},
-        {field: 'showTime', title: 'SHOW TIME'},
-        {field: 'seat', title: 'SEAT'}
+        {field: 'showTime', title: 'SHOW TIME', format: "{0:yyyy-MM-dd}"},
+        {field: 'seat', title: 'SEAT'},
+        {
+            headerTemplate: "作業",
+            command: {
+                name: "destroy",
+                text: "取消訂票",
+                imageClass: "k-delete",
+                className: "k-grid-delete",
+                iconClass: "k-icon"
+            }
+        }
+    ];
+
+    self.movieColumns = [
+        {
+            field: 'id',
+            title: 'ID',
+            filterable: false,
+            template: '{{dataItem.id}}'
+        },
+        {
+            field: 'name',
+            title: 'MOVIE NAME',
+            template: '{{dataItem.name}}',
+            editor: function (container) {
+                var input = $('<input class="k-input k-textbox" name="name">');
+                input.appendTo(container);
+            },
+        },
+        {
+            field: 'image',
+            title: 'IMAGE',
+            filterable: false,
+            // template: '{{dataItem.image}}',
+            template: '<img src="{{dataItem.image}}" width="100%"/>',
+            editor: function (container) {
+                var input = $('<input class="k-input k-textbox" name="image">');
+                input.appendTo(container);
+            },
+        },
+        {
+            field: 'video',
+            title: 'VIDEO',
+            filterable: false,
+            template: '{{dataItem.video}}',
+            editor: function (container) {
+                var input = $('<input class="k-input k-textbox" name="video">');
+                input.appendTo(container);
+            },
+        },
+        {
+            field: 'storeId',
+            title: 'STORE ID',
+            filterable: false,
+            template: '{{dataItem.storeId}}',
+        },
+        {
+            headerTemplate: "作業",
+            command: {
+                name: "destroy",
+                text: "刪除電影",
+                imageClass: "k-delete",
+                className: "k-grid-delete",
+                iconClass: "k-icon"
+            }
+        }
+    ];
+
+    self.manageColumns = [
+        {
+            field: 'id',
+            title: 'ID',
+            filterable: false,
+            template: '{{dataItem.id}}'
+        },
+        {
+            field: 'username',
+            title: 'USER NAME',
+            template: '{{dataItem.username}}',
+            editor: function (container) {
+                var input = $('<input class="k-input k-textbox" name="username">');
+                input.appendTo(container);
+            },
+        },
+        {
+            field: 'password',
+            title: 'PASSWORD',
+            filterable: false,
+            template: "*****",
+            editor: function (container) {
+                var input = $('<input class="k-input k-textbox" name="password">');
+                input.appendTo(container);
+            },
+        },
+        {
+            field: 'role',
+            title: 'ROLE',
+            filterable: {
+                ui: GridFilterConfig.roleFilter
+            },
+            template: '{{dataItem.role}}',
+            editor: '<div>' +
+            '<label><input type="radio" id="manager" name="role" value="admin">admin</label>' +
+            '<label><input type="radio" id="director" name="role" value="staff">staff</label>' +
+            '<label><input type="radio" id="director" name="role" value="customer">customer</label>' +
+            '</div>'
+        },
+        {
+            headerTemplate: "作業",
+            command: {
+                name: "destroy",
+                text: "刪除成員",
+                imageClass: "k-delete",
+                className: "k-grid-delete",
+                iconClass: "k-icon"
+            }
+        }
     ];
 
     self.filterableOption = {

@@ -7,6 +7,14 @@
     <sec:authorize access="hasAnyRole('customer')">
     	<%-- <input type="button" onclick="location.href='${pageContext.request.contextPath}/iMovie/#/listBookerLogs';" value="BookerLogs" class="col-sm-3"/> --%>
     	<input type="button" onclick="location.href='${pageContext.request.contextPath}/iMovie/#/listBookerTickets';" value="BookerTickets" class="col-sm-3"/>
+    	<input type="button" onclick="location.href='${pageContext.request.contextPath}/iMovie/#/booking';" value="Booking" class="col-sm-3"/>
+    </sec:authorize>
+    <sec:authorize access="hasAnyRole('staff')">
+        <input type="button" onclick="location.href='${pageContext.request.contextPath}/iMovie/#/listStoreMovies';" value="StoreList" class="col-sm-3"/>
+    </sec:authorize>
+    <sec:authorize access="hasAnyRole('admin')">
+        <input type="button" onclick="location.href='${pageContext.request.contextPath}/iMovie/#/listStoreMovies';" value="StoreList" class="col-sm-3"/>
+        <input type="button" onclick="location.href='${pageContext.request.contextPath}/iMovie/#/manage';" value="Manage" class="col-sm-3"/>
     </sec:authorize>
     <%-- <input type="button" onclick="location.href='${pageContext.request.contextPath}/iMovie/#/listMovies';" value="Movies" class="col-sm-3"/> --%>
     <form action="${pageContext.request.contextPath}/logout" method="POST" class="col-sm-3">

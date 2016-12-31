@@ -86,7 +86,7 @@ public class UserWebService
 		if (userRepository.exists(userId))
 		{
 			int bookerId = userRepository.findOne(userId).getBookerId();
-			restTemplate.delete(filmApiUrl + "/bookers/" + bookerId, bookerId);
+			restTemplate.delete(filmApiUrl + "/bookers/" + bookerId);
 			userRepository.delete(userId);
 		}
 	}
