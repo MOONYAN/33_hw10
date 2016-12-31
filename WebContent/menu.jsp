@@ -9,6 +9,9 @@
     	<input type="button" onclick="location.href='${pageContext.request.contextPath}/iMovie/#/listBookerTickets';" value="BookerTickets" class="col-sm-3"/>
     	<input type="button" onclick="location.href='${pageContext.request.contextPath}/iMovie/#/booking';" value="Booking" class="col-sm-3"/>
     </sec:authorize>
+    <sec:authorize access="hasAnyRole('staff')">
+        <input type="button" onclick="location.href='${pageContext.request.contextPath}/iMovie/#/listStoreMovie';" value="Booking" class="col-sm-3"/>
+    </sec:authorize>
     <%-- <input type="button" onclick="location.href='${pageContext.request.contextPath}/iMovie/#/listMovies';" value="Movies" class="col-sm-3"/> --%>
     <form action="${pageContext.request.contextPath}/logout" method="POST" class="col-sm-3">
     	<input type="submit" value="Logout" class="col-sm-12"/>

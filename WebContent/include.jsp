@@ -18,6 +18,12 @@
 	<script src="${pageContext.request.contextPath}/js/services/customerService.js"></script>
 </sec:authorize>
 
+<sec:authorize access="hasAnyRole('staff')">
+	<script src="${pageContext.request.contextPath}/js/staff.config.js"></script>
+	<script src="${pageContext.request.contextPath}/js/staff.run.js"></script>
+    <script src="${pageContext.request.contextPath}/js/controllers/movieController.js"></script>
+</sec:authorize>
+
 <sec:authorize access="isAuthenticated()">
 	<script src="${pageContext.request.contextPath}/js/services/gridViewConfig.js"></script>
 	<script src="${pageContext.request.contextPath}/js/services/gridFilterConfig.js"></script>
