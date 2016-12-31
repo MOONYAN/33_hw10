@@ -1,29 +1,32 @@
-angular.module('iMovie').controller('MovieController', ['GridViewConfig', function (GridViewConfig) {
+angular.module('iMovie').controller('ManageController', ['GridViewConfig', 'GridFilterConfig', function (GridViewConfig, GridFilterConfig) {
     var self = this;
 
-    var movieDataSource = {
+    var manageDataSource = {
         transport: {
             read: {
-                url: contextPath + "/ws/movies/store/",
+                url: contextPath + "/ws/users/",
                 type: "GET",
                 dataType: "json",
-                contentType: 'application/json'
+                contentType: 'application/json',
+                complete: function (options) {
+                    console.log(options);
+                }
             },
 
             create: {
-                url: contextPath + "/ws/movies",
+                url: contextPath + "/ws/users",
                 type: "POST",
                 dataType: "json",
                 contentType: 'application/json',
                 complete: function () {
-                    self.message = "電影已新增";
+                    self.message = "職員已新增";
                 }
             },
 
             destroy: {
                 url: function (options) {
                     console.log(options);
-                    return contextPath + "/ws/movies/" + options.id;
+                    return contextPath + "/ws/users/" + options.id;
                 },
                 type: "DELETE",
                 dataType: "json",
@@ -43,10 +46,9 @@ angular.module('iMovie').controller('MovieController', ['GridViewConfig', functi
                 id: "id",
                 fields: {
                     id: {editable: false},
-                    name: {validation: {required: true}, type: "string"},
-                    image: {validation: {required: true}},
-                    video: {validation: {required: true}},
-                    storeId: {editable: false}
+                    username: {validation: {required: true}, type: "string"},
+                    password: {validation: {required: true}},
+                    role: {validation: {required: true}}
                 }
             }
         },
@@ -54,9 +56,9 @@ angular.module('iMovie').controller('MovieController', ['GridViewConfig', functi
     };
 
     self.gridOptions = {
-        dataSource: movieDataSource,
+        dataSource: manageDataSource,
         pageable: GridViewConfig.pageableOption,
-        columns: GridViewConfig.movieColumns,
+        columns: GridViewConfig.manageColumns,
         filterable: GridViewConfig.filterableOption,
         toolbar: [
             {name: "create", text: "新增", imageClass: "k-add", className: "k-grid-add", iconClass: "k-icon"}

@@ -5,5 +5,11 @@ angular.module('iMovie').config(['$stateProvider', function ($stateProvider) {
             templateUrl: contextPath + '/views/movieList.html',
             controller: 'MovieController',
             controllerAs: 'MovieCtrl'
+        })
+        .state('manage', {
+            url: '/manage',
+            templateUrl: contextPath + '/views/manage.html',
+            controller: 'ManageController',
+            controllerAs: 'ManageCtrl'
         });
 }]);

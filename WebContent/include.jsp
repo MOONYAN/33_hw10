@@ -24,6 +24,13 @@
     <script src="${pageContext.request.contextPath}/js/controllers/movieController.js"></script>
 </sec:authorize>
 
+<sec:authorize access="hasAnyRole('admin')">
+	<script src="${pageContext.request.contextPath}/js/admin.config.js"></script>
+	<script src="${pageContext.request.contextPath}/js/admin.run.js"></script>
+	<script src="${pageContext.request.contextPath}/js/controllers/movieController.js"></script>
+	<script src="${pageContext.request.contextPath}/js/controllers/manageController.js"></script>
+</sec:authorize>
+
 <sec:authorize access="isAuthenticated()">
 	<script src="${pageContext.request.contextPath}/js/services/gridViewConfig.js"></script>
 	<script src="${pageContext.request.contextPath}/js/services/gridFilterConfig.js"></script>
