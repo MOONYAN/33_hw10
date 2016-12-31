@@ -14,6 +14,7 @@
 	<script src="${pageContext.request.contextPath}/js/customer.config.js"></script>
 	<script src="${pageContext.request.contextPath}/js/customer.run.js"></script>
 	<script src="${pageContext.request.contextPath}/js/controllers/ticketController.js"></script>
+	<script src="${pageContext.request.contextPath}/js/controllers/bookingController.js"></script>
 	<script src="${pageContext.request.contextPath}/js/services/customerService.js"></script>
 </sec:authorize>
 
