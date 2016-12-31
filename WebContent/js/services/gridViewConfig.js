@@ -81,6 +81,57 @@ angular.module('iMovie').service('GridViewConfig', function (GridFilterConfig) {
         }
     ];
 
+    self.manageColumns = [
+        {
+            field: 'id',
+            title: 'ID',
+            filterable: false,
+            template: '{{dataItem.id}}'
+        },
+        {
+            field: 'username',
+            title: 'USER NAME',
+            template: '{{dataItem.username}}',
+            editor: function (container) {
+                var input = $('<input class="k-input k-textbox" name="username">');
+                input.appendTo(container);
+            },
+        },
+        {
+            field: 'password',
+            title: 'PASSWORD',
+            filterable: false,
+            template: "*****",
+            editor: function (container) {
+                var input = $('<input class="k-input k-textbox" name="password">');
+                input.appendTo(container);
+            },
+        },
+        {
+            field: 'role',
+            title: 'ROLE',
+            filterable: {
+                ui: GridFilterConfig.roleFilter
+            },
+            template: '{{dataItem.role}}',
+            editor: '<div>' +
+            '<label><input type="radio" id="manager" name="role" value="admin">admin</label>' +
+            '<label><input type="radio" id="director" name="role" value="staff">staff</label>' +
+            '<label><input type="radio" id="director" name="role" value="customer">customer</label>' +
+            '</div>'
+        },
+        {
+            headerTemplate: "作業",
+            command: {
+                name: "destroy",
+                text: "刪除成員",
+                imageClass: "k-delete",
+                className: "k-grid-delete",
+                iconClass: "k-icon"
+            }
+        }
+    ];
+
     self.filterableOption = {
         extra: false,
         messages: {

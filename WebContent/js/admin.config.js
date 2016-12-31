@@ -9,7 +9,7 @@ angular.module('iMovie').config(['$stateProvider', function ($stateProvider) {
         .state('manage', {
             url: '/manage',
             templateUrl: contextPath + '/views/manage.html',
-            controller: 'manageController',
-            controllerAs: 'manageCtrl'
+            controller: 'ManageController',
+            controllerAs: 'ManageCtrl'
         });
 }]);

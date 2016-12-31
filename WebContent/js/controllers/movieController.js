@@ -43,7 +43,7 @@ angular.module('iMovie').controller('MovieController', ['GridViewConfig', functi
                 id: "id",
                 fields: {
                     id: {editable: false},
-                    name: {validation: {required: true, type: "string"}},
+                    name: {validation: {required: true}, type: "string"},
                     image: {validation: {required: true}},
                     video: {validation: {required: true}},
                     storeId: {editable: false}

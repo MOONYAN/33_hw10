@@ -13,6 +13,26 @@ angular.module('iMovie').service('GridFilterConfig', function (){
                 endOperator.trigger("change");
                 e.container.find(".k-dropdown").hide();
             });
+        }else if (e.field === "role") {
+            var operator = e.container.find("[data-role=dropdownlist]:eq(0)").data("kendoDropDownList");
+            operator.value("eq");
+            operator.trigger("change");
+            operator.wrapper.hide();
         }
+    };
+
+    self.roleFilter = function(element) {
+        element.kendoDropDownList({
+            dataTextField: "roleText",
+            dataValueField: "role",
+            dataSource: {
+                data: [
+                    { roleText: "admin", role: "admin" },
+                    { roleText: "staff", role: "staff" },
+                    { roleText: "customer", role: "customer" }
+                ]
+            },
+            optionLabel: "-- 權限選擇 --"
+        });
     };
 });
